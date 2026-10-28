@@ -4,39 +4,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Neves Store — Streetwear & Sneakers</title>
- <link rel="stylesheet" href="{% static 'css/nevesStore.css' %}" />
+  <meta name="theme-color" content="#080808" />
+  <meta name="description" content="Fair Price Importados — tênis, sneakers e moda com estilo e preço justo." />
+  <title>Fair Price Importados — Estilo e Preço Justo</title>
+  <link rel="stylesheet" href="{% static 'css/nevesStore.css' %}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Topbar Anúncio Roxo Grafite -->
+  <!-- Faixa de anúncio -->
   <div class="announcement-bar">
-     ANIVERSÁRIO NEVES STORE: SNEAKERS COM ATÉ 50% OFF + FRETE GRÁTIS!
+    FAIR PRICE IMPORTADOS — ESTILO, QUALIDADE E PREÇO JUSTO
   </div>
 
-  <!-- Header Escuro -->
+  <!-- Cabeçalho -->
   <header class="header">
     <div class="header-container">
       <div class="logo">
-        <a href="index.html">
-          <img src="{% static 'imgs tenis/logoneves store.jpg' %}" alt="Neves Store" class="logo-img">
+        <a href="index.html" aria-label="Página inicial Fair Price Importados">
+          <img src="{% static 'imgs tenis/logoneves store.jpg' %}" alt="Fair Price Importados" class="logo-img">
         </a>
       </div>
 
       <div class="search-bar">
         <form id="searchForm">
-          <input type="text" id="searchInput" placeholder="Buscar camisetas, tênis, moletons..." />
-          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input type="text" id="searchInput" placeholder="Buscar tênis, camisetas, moletons..." />
+          <button type="submit" aria-label="Buscar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
         </form>
       </div>
 
       <div class="header-icons">
-        <button id="theme-toggle" class="theme-toggle-btn" title="Alternar Modo Claro/Escuro" type="button">
+        <button id="theme-toggle" class="theme-toggle-btn" title="Alternar modo claro/escuro" type="button">
           <i class="fa-solid fa-moon" id="theme-icon"></i>
         </button>
-        <a href="perfil.html" id="user-profile-link" title="Minha Conta"><i class="fa-solid fa-user"></i></a>
-        <a href="carrinho.html" id="cart-button">
+
+        <a href="perfil.html" id="user-profile-link" title="Minha Conta" aria-label="Minha conta">
+          <i class="fa-solid fa-user"></i>
+        </a>
+
+        <a href="carrinho.html" id="cart-button" aria-label="Carrinho de compras">
           <i class="fa-solid fa-bag-shopping"></i>
           <span id="cart-count">0</span>
         </a>
@@ -44,7 +52,7 @@
     </div>
   </header>
 
-  <!-- Navegação Categorias Streetwear -->
+  <!-- Navegação por categorias -->
   <nav class="navbar-categorias">
     <ul class="navbar-nav">
       <li><a href="tenis.html" class="nav-link">Tênis</a></li>
@@ -55,59 +63,59 @@
     </ul>
   </nav>
 
-  <!-- Hero Banner Principal -->
+  <!-- Banner principal -->
   <section class="hero-streetwear">
     <div class="hero-banner-content">
-      <span class="hero-tag-purple">ESPECIAL DE ANIVERSÁRIO</span>
-      <h1>DRIP & <br><span class="highlight-cyan">STREETWEAR</span></h1>
-      <p>FRETE POR NOSSA CONTA NAS COMPRAS ENTRE OS DIAS 14/10 a 21/10<strong> </strong></p>
+      <span class="hero-tag-purple">FAIR PRICE IMPORTADOS</span>
+      <h1>SEU ESTILO.<br><span class="highlight-cyan">SEU PREÇO.</span></h1>
+      <p>Encontre seu próximo favorito com estilo e preço justo.</p>
     </div>
   </section>
 
-<!-- Grid Banners de Marcas (Filtro na Página de Tênis) -->
-<section class="brands-section">
-  <div class="brands-grid">
+  <!-- Banners de marcas -->
+  <section class="brands-section">
+    <div class="brands-grid">
 
-    <a href="tenis.html?busca=nike" class="brand-card">
-      <img src="{% static 'imgs tenis/nike/12mola/12molabranco.jpg' %}" alt="nike collection">
-      <div class="brand-overlay">
-        <span>NIKE</span>
-      </div>
-    </a>
+      <a href="tenis.html?busca=nike" class="brand-card">
+        <img src="{% static 'imgs tenis/nike/12mola/12molabranco.jpg' %}" alt="Coleção Nike">
+        <div class="brand-overlay">
+          <span>NIKE</span>
+        </div>
+      </a>
 
-    <a href="tenis.html?busca=adidas" class="brand-card">
-      <img src="{% static 'imgs tenis/adidas/grandcourt2.0/adidasgrandcourtpretoebranco.jpg' %}" alt="adidas collection">
-      <div class="brand-overlay">
-        <span>ADIDAS</span>
-      </div>
-    </a>
+      <a href="tenis.html?busca=adidas" class="brand-card">
+        <img src="{% static 'imgs tenis/adidas/grandcourt2.0/adidasgrandcourtpretoebranco.jpg' %}" alt="Coleção Adidas">
+        <div class="brand-overlay">
+          <span>ADIDAS</span>
+        </div>
+      </a>
 
-    <a href="tenis.html?busca=mizuno" class="brand-card">
-      <img src="{% static 'imgs tenis/mizuno/pro14/mizunopro14branco.jpg' %}" alt="mizuno collection">
-      <div class="brand-overlay">
-        <span>MIZUNO</span>
-      </div>
-    </a>
+      <a href="tenis.html?busca=mizuno" class="brand-card">
+        <img src="{% static 'imgs tenis/mizuno/pro14/mizunopro14branco.jpg' %}" alt="Coleção Mizuno">
+        <div class="brand-overlay">
+          <span>MIZUNO</span>
+        </div>
+      </a>
 
-    <a href="tenis.html?busca=puma" class="brand-card">
-      <img src="{% static 'imgs tenis/puma/pumaAMGpretoeverde.jpg' %}" alt="puma collection">
-      <div class="brand-overlay">
-        <span>PUMA</span>
-      </div>
-    </a>
+      <a href="tenis.html?busca=puma" class="brand-card">
+        <img src="{% static 'imgs tenis/puma/pumaAMGpretoeverde.jpg' %}" alt="Coleção Puma">
+        <div class="brand-overlay">
+          <span>PUMA</span>
+        </div>
+      </a>
 
-  </div>
-</section>
+    </div>
+  </section>
 
-  <!-- Seção Mais Vendidos -->
+  <!-- Produtos mais vendidos -->
   <section class="products-section">
     <div class="section-title text-center">
-      <h2>TOP 10 MAIS VENDIDOS DA LOJA</h2>
+      <h2>OS QUERIDINHOS DA FAIR PRICE</h2>
     </div>
 
     <div class="produtos-grid">
 
-     <div class="product-card">
+      <div class="product-card">
         <span class="badge-discount">-20%</span>
         <div class="product-image-box">
           <img src="{% static 'imgs tenis/nike/tn/tnpreto.jpg' %}" alt="Tênis Nike TN">
@@ -180,11 +188,10 @@
         ]'>Ver Detalhes</button>
       </div>
 
-
       <div class="product-card">
         <span class="badge-discount">-10%</span>
         <div class="product-image-box">
-          <img src="{% static 'imgs tenis/adidas/campus/adidascampuspreto.png' %}" alt="Tênis adidas campus">
+          <img src="{% static 'imgs tenis/adidas/campus/adidascampuspreto.png' %}" alt="Tênis Adidas Campus">
         </div>
         <div class="product-info">
           <h3>Tênis Adidas Campus</h3>
@@ -196,10 +203,9 @@
         <button class="btn-buy" type="button" data-variants='[
           {"cor": "Preto", "img": "{% static 'imgs tenis/adidas/campus/adidascampuspreto.png' %}"},
           {"cor": "Bege", "img": "{% static 'imgs tenis/adidas/campus/adidascampusbege.jpg' %}"},
-           {"cor": "Cinza", "img": "{% static 'imgs tenis/adidas/campus/adidascampusciza.jpg' %}"}
+          {"cor": "Cinza", "img": "{% static 'imgs tenis/adidas/campus/adidascampusciza.jpg' %}"}
         ]'>Ver Detalhes</button>
       </div>
-
 
       <div class="product-card">
         <span class="badge-discount">-20%</span>
@@ -226,10 +232,10 @@
       <div class="product-card">
         <span class="badge-discount">-10%</span>
         <div class="product-image-box">
-          <img src="{% static 'imgs tenis/mizuno/coolride/mizunocoolridepreto.jpg' %}" alt="Tênis Mizuno cool ride">
+          <img src="{% static 'imgs tenis/mizuno/coolride/mizunocoolridepreto.jpg' %}" alt="Tênis Mizuno Cool Ride">
         </div>
         <div class="product-info">
-          <h3>Tênis Mizuno cool ride</h3>
+          <h3>Tênis Mizuno Cool Ride</h3>
           <div class="prices">
             <span class="old-price">R$ 329,89</span>
             <span class="current-price">R$ 299,90</span>
@@ -242,11 +248,10 @@
         ]'>Ver Detalhes</button>
       </div>
 
-
       <div class="product-card">
         <span class="badge-discount">-15%</span>
         <div class="product-image-box">
-          <img src="{% static 'imgs tenis/adidas/grandcourt2.0/adidasgrandcourtpretoebranco.jpg' %}" alt="Tênis adidas grand court 2.0">
+          <img src="{% static 'imgs tenis/adidas/grandcourt2.0/adidasgrandcourtpretoebranco.jpg' %}" alt="Tênis Adidas Grand Court 2.0">
         </div>
         <div class="product-info">
           <h3>Tênis Adidas Grand Court 2.0</h3>
@@ -257,13 +262,13 @@
         </div>
         <button class="btn-buy" type="button" data-variants='[
           {"cor": "Preto e Branco", "img": "{% static 'imgs tenis/adidas/grandcourt2.0/adidasgrandcourtpretoebranco.jpg' %}"},
-          {"cor": "Branco e azul", "img": "{% static 'imgs tenis/adidas/grandcourt2.0/adidadgrandcourtbrancoeazul.jpg' %}"},
+          {"cor": "Branco e Azul", "img": "{% static 'imgs tenis/adidas/grandcourt2.0/adidadgrandcourtbrancoeazul.jpg' %}"},
           {"cor": "Azul e Branco", "img": "{% static 'imgs tenis/adidas/grandcourt2.0/adidasgrandcourtazulebranco.jpg' %}"},
           {"cor": "Cinza e Vermelho", "img": "{% static 'imgs tenis/adidas/grandcourt2.0/adidasgrandcourtcinzaevermelho.jpg' %}"}
         ]'>Ver Detalhes</button>
       </div>
 
-       <div class="product-card">
+      <div class="product-card">
         <span class="badge-discount">-25%</span>
         <div class="product-image-box">
           <img src="{% static 'imgs tenis/alexander/alexsanderbranco.jpg' %}" alt="Tênis Alexander McQueen">
@@ -278,31 +283,30 @@
         <button class="btn-buy" type="button" data-variants='[
           {"cor": "Branco com Preto", "img": "{% static 'imgs tenis/alexander/alexsanderbranco.jpg' %}"},
           {"cor": "Preto com Branco", "img": "{% static 'imgs tenis/alexander/alexanderpreto.jpg' %}"},
-           {"cor": "Preto Camurça", "img": "{% static 'imgs tenis/alexander/alexsanderpretocamurça.jpg' %}"},
-            {"cor": "Branco", "img": "{% static 'imgs tenis/alexander/alexsandertodobranco.jpg' %}"},
-             {"cor": "Preto", "img": "{% static 'imgs tenis/alexander/alexsandertodopreto.jpg' %}"}
+          {"cor": "Preto Camurça", "img": "{% static 'imgs tenis/alexander/alexsanderpretocamurça.jpg' %}"},
+          {"cor": "Branco", "img": "{% static 'imgs tenis/alexander/alexsandertodobranco.jpg' %}"},
+          {"cor": "Preto", "img": "{% static 'imgs tenis/alexander/alexsandertodopreto.jpg' %}"}
         ]'>Ver Detalhes</button>
       </div>
 
-
       <div class="product-card">
-  <div class="product-image-box">
-    <img src="{% static 'imgs tenis/tommy/tommypreto.jpg' %}" alt="Tênis Tommy Hilfiger Preto">
-  </div>
-  <div class="product-info">
-    <h3>Tênis Tommy Hilfiger</h3>
-    <div class="prices">
-      <span class="current-price">R$ 329,90</span>
-    </div>
-  </div>
-  <button class="btn-buy" type="button" data-variants='[
-    {"cor": "Preto", "img": "{% static 'imgs tenis/tommy/tommypreto.jpg' %}"},
-    {"cor": "Azul", "img": "{% static 'imgs tenis/tommy/tommyazul.jpg' %}"},
-    {"cor": "Branco", "img": "{% static 'imgs tenis/tommy/tommybranco.jpg' %}"},
-    {"cor": "Cinza", "img": "{% static 'imgs tenis/tommy/tommycinza.jpg' %}"},
-    {"cor": "Todo Preto", "img": "{% static 'imgs tenis/tommy/tommytodopreto.jpg' %}"}
-  ]'>Ver Detalhes</button>
-</div>
+        <div class="product-image-box">
+          <img src="{% static 'imgs tenis/tommy/tommypreto.jpg' %}" alt="Tênis Tommy Hilfiger Preto">
+        </div>
+        <div class="product-info">
+          <h3>Tênis Tommy Hilfiger</h3>
+          <div class="prices">
+            <span class="current-price">R$ 329,90</span>
+          </div>
+        </div>
+        <button class="btn-buy" type="button" data-variants='[
+          {"cor": "Preto", "img": "{% static 'imgs tenis/tommy/tommypreto.jpg' %}"},
+          {"cor": "Azul", "img": "{% static 'imgs tenis/tommy/tommyazul.jpg' %}"},
+          {"cor": "Branco", "img": "{% static 'imgs tenis/tommy/tommybranco.jpg' %}"},
+          {"cor": "Cinza", "img": "{% static 'imgs tenis/tommy/tommycinza.jpg' %}"},
+          {"cor": "Todo Preto", "img": "{% static 'imgs tenis/tommy/tommytodopreto.jpg' %}"}
+        ]'>Ver Detalhes</button>
+      </div>
 
       <div class="product-card">
         <span class="badge-discount">-35%</span>
@@ -335,27 +339,32 @@
     </div>
   </section>
 
-  <!-- Modal Seleção de Categorias -->
+  <!-- Modal de categorias -->
   <div id="catalog-modal" class="modal-overlay">
     <div class="modal-card">
       <div class="modal-header">
         <h3><i class="fa-solid fa-store"></i> Escolha uma Categoria</h3>
-        <button id="btn-close-modal" class="modal-close" type="button">&times;</button>
+        <button id="btn-close-modal" class="modal-close" type="button" aria-label="Fechar">&times;</button>
       </div>
+
       <p class="modal-subtitle">Selecione o que você deseja explorar no catálogo:</p>
+
       <div class="category-options-grid">
         <a href="tenis.html" class="category-card-item">
           <i class="fa-solid fa-socks"></i>
           <span>Tênis & Sneakers</span>
         </a>
+
         <a href="camisetas.html" class="category-card-item">
           <i class="fa-solid fa-shirt"></i>
           <span>Camisetas</span>
         </a>
+
         <a href="blusasecnjs.html" class="category-card-item">
           <i class="fa-solid fa-mitten"></i>
           <span>Blusas & Conjuntos</span>
         </a>
+
         <a href="acesorrios.html" class="category-card-item">
           <i class="fa-solid fa-glasses"></i>
           <span>Acessórios</span>
@@ -368,9 +377,10 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-col">
-        <h4>NEVES STORE</h4>
-        <p>A sua loja referência em moda masculina streetwear. Qualidade e o melhor atendimento da região.</p>
+        <h4>FAIR PRICE IMPORTADOS</h4>
+        <p>Seu estilo, sua escolha. Produtos para quem busca personalidade, qualidade e preço justo.</p>
       </div>
+
       <div class="footer-col">
         <h4>Navegação</h4>
         <ul>
@@ -380,53 +390,58 @@
           <li><a href="acesorrios.html">Acessórios</a></li>
         </ul>
       </div>
+
       <div class="footer-col">
         <h4>Atendimento</h4>
         <p>E-mail: nevesstoreoficial01@gmail.com</p>
         <p>WhatsApp: (19) 99972-8998</p>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <p>&copy; 2026 NEVES STORE — Todos os direitos reservados.</p>
+      <p>&copy; 2026 FAIR PRICE IMPORTADOS — Todos os direitos reservados.</p>
     </div>
   </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Modal Controls
-      const btnOpenModal = document.getElementById('btn-open-catalog');
-      const btnCloseModal = document.getElementById('btn-close-modal');
-      const catalogModal = document.getElementById('catalog-modal');
+      // Controles do modal
+      const btnOpenModal = document.getElementById("btn-open-catalog");
+      const btnCloseModal = document.getElementById("btn-close-modal");
+      const catalogModal = document.getElementById("catalog-modal");
 
       if (btnOpenModal && catalogModal) {
-        btnOpenModal.addEventListener('click', (e) => {
+        btnOpenModal.addEventListener("click", (e) => {
           e.preventDefault();
-          catalogModal.classList.add('active');
+          catalogModal.classList.add("active");
         });
       }
 
       if (btnCloseModal && catalogModal) {
-        btnCloseModal.addEventListener('click', () => {
-          catalogModal.classList.remove('active');
+        btnCloseModal.addEventListener("click", () => {
+          catalogModal.classList.remove("active");
         });
       }
 
       if (catalogModal) {
-        catalogModal.addEventListener('click', (e) => {
+        catalogModal.addEventListener("click", (e) => {
           if (e.target === catalogModal) {
-            catalogModal.classList.remove('active');
+            catalogModal.classList.remove("active");
           }
         });
       }
 
-      // User Profile Check
+      // Exibição do perfil do usuário
       const usuario = JSON.parse(localStorage.getItem("usuario"));
       const userLink = document.getElementById("user-profile-link");
+
       if (usuario && usuario.nome && userLink) {
-        userLink.innerHTML = `<span style="font-size: 13px; font-weight: 700; color: var(--accent-cyan);">👤 ${usuario.nome}</span>`;
+        userLink.innerHTML =
+          `<span style="font-size: 13px; font-weight: 700;">👤 ${usuario.nome}</span>`;
       }
     });
   </script>
+
   <script src="{% static 'js/produtos.js' %}"></script>
 </body>
 </html>

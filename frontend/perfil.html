@@ -1,23 +1,180 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Meu Perfil — Neves Store</title>
-  <link rel="stylesheet" href="{% static 'css/nevesStore.css' %}" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Perfil — Fair Price Importados</title>
+
+  <link rel="stylesheet" href="{% static 'css/nevesStore.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    :root {
+      --accent-cyan: #d4af37;
+      --gold-primary: #d4af37;
+      --gold-hover: #f0cf65;
+      --background-dark: #080808;
+      --card-background: #111;
+      --border-color: #2b2b2b;
+      --text-light: #fff;
+      --text-muted: #aaa;
+    }
+
+    body {
+      background: var(--background-dark);
+      color: var(--text-light);
+    }
+
+    .profile-main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .profile-card,
+    .minhas-compras-section {
+      background: var(--card-background);
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      color: var(--text-light);
+    }
+
+    .profile-card h2,
+    .minhas-compras-section h2 {
+      color: var(--gold-primary);
+      margin-bottom: 20px;
+    }
+
+    #form-perfil {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    #form-perfil label {
+      display: block;
+      margin-bottom: 6px;
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px;
+      background: #1c1c1c;
+      border: 1px solid #383838;
+      color: #fff;
+      border-radius: 6px;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    .input-field:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.15);
+    }
+
+    .input-field:disabled {
+      background: #151515;
+      color: #888;
+      cursor: not-allowed;
+    }
+
+    .profile-actions {
+      grid-column: span 2;
+      text-align: right;
+      margin-top: 10px;
+    }
+
+    .btn-save,
+    .btn-logout {
+      font-weight: bold;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-save {
+      background: var(--gold-primary);
+      color: #080808;
+    }
+
+    .btn-save:hover {
+      background: var(--gold-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-logout {
+      background: #dc3545;
+      color: #fff;
+      margin-left: 10px;
+    }
+
+    .btn-logout:hover {
+      background: #b02a37;
+    }
+
+    .minhas-compras-section {
+      margin-top: 40px;
+    }
+
+    #sem-pedidos {
+      color: var(--text-muted);
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .profile-main {
+        margin: 20px auto;
+        padding: 12px;
+      }
+
+      .profile-card,
+      .minhas-compras-section {
+        padding: 18px;
+      }
+
+      #form-perfil {
+        grid-template-columns: 1fr;
+      }
+
+      #form-perfil > div,
+      .profile-actions {
+        grid-column: span 1 !important;
+      }
+
+      .profile-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .btn-save,
+      .btn-logout {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Cabeçalho -->
   <header class="header">
     <div class="header-container">
       <div class="logo">
-        <a href="index.html"><img src="{% static 'imgs tenis/logoneves store.jpg' %}" alt="Neves Store"></a>
+        <a href="index.html">
+          <img src="{% static 'imgs tenis/logoneves store.jpg' %}" alt="Fair Price Importados">
+        </a>
       </div>
+
       <div class="header-icons">
-        <a href="carrinho.html" id="cart-button">
+        <a href="carrinho.html" id="cart-button" aria-label="Abrir carrinho">
           <i class="fa-solid fa-bag-shopping"></i>
           <span id="cart-count">0</span>
         </a>
@@ -25,47 +182,91 @@
     </div>
   </header>
 
-  <main style="max-width: 900px; margin: 40px auto; padding: 20px;">
-    <!-- Dados do Usuário -->
-    <section class="profile-card" style="background: #111; padding: 25px; border-radius: 12px; border: 1px solid #222; color: #fff;">
-      <h2 style="color: var(--accent-cyan); margin-bottom: 20px;"><i class="fa-solid fa-user-gear"></i> Meus Dados Cadastrais</h2>
-      
-      <form id="form-perfil" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+  <main class="profile-main">
+
+    <!-- Dados do usuário -->
+    <section class="profile-card">
+      <h2>
+        <i class="fa-solid fa-user-gear"></i>
+        Meus Dados Cadastrais
+      </h2>
+
+      <form id="form-perfil">
         <div>
-          <label>Nome:</label>
-          <input type="text" id="perfil-nome" class="input-field" style="width: 100%; padding: 10px; background: #222; border: 1px solid #333; color: #fff; border-radius: 6px;">
+          <label for="perfil-nome">Nome:</label>
+          <input
+            type="text"
+            id="perfil-nome"
+            class="input-field"
+            autocomplete="name">
         </div>
+
         <div>
-          <label>E-mail (não alterável):</label>
-          <input type="email" id="perfil-email" class="input-field" disabled style="width: 100%; padding: 10px; background: #181818; border: 1px solid #333; color: #888; border-radius: 6px;">
+          <label for="perfil-email">E-mail (não alterável):</label>
+          <input
+            type="email"
+            id="perfil-email"
+            class="input-field"
+            autocomplete="email"
+            disabled>
         </div>
+
         <div>
-          <label>Telefone / WhatsApp:</label>
-          <input type="text" id="perfil-telefone" class="input-field" style="width: 100%; padding: 10px; background: #222; border: 1px solid #333; color: #fff; border-radius: 6px;">
+          <label for="perfil-telefone">Telefone / WhatsApp:</label>
+          <input
+            type="tel"
+            id="perfil-telefone"
+            class="input-field"
+            autocomplete="tel">
         </div>
+
         <div>
-          <label>CEP:</label>
-          <input type="text" id="perfil-cep" class="input-field" style="width: 100%; padding: 10px; background: #222; border: 1px solid #333; color: #fff; border-radius: 6px;">
+          <label for="perfil-cep">CEP:</label>
+          <input
+            type="text"
+            id="perfil-cep"
+            class="input-field"
+            maxlength="9"
+            autocomplete="postal-code">
         </div>
+
         <div style="grid-column: span 2;">
-          <label>Endereço de Entrega:</label>
-          <input type="text" id="perfil-rua" class="input-field" style="width: 100%; padding: 10px; background: #222; border: 1px solid #333; color: #fff; border-radius: 6px;">
+          <label for="perfil-rua">Endereço de Entrega:</label>
+          <input
+            type="text"
+            id="perfil-rua"
+            class="input-field"
+            autocomplete="street-address">
         </div>
-        <div style="grid-column: span 2; text-align: right; margin-top: 10px;">
-          <button type="submit" style="background: var(--accent-cyan); color: #000; font-weight: bold; padding: 12px 25px; border: none; border-radius: 6px; cursor: pointer;">Guardar Alterações</button>
-          <button type="button" id="btn-logout" style="background: #dc3545; color: #fff; font-weight: bold; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; margin-left: 10px;">Sair da Conta</button>
+
+        <div class="profile-actions">
+          <button type="submit" class="btn-save">
+            <i class="fa-solid fa-floppy-disk"></i>
+            Salvar Alterações
+          </button>
+
+          <button type="button" id="btn-logout" class="btn-logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sair da Conta
+          </button>
         </div>
       </form>
     </section>
 
-    <!-- Secção Minhas Compras -->
-    <section class="minhas-compras-section" style="margin-top: 40px; background: #111; padding: 25px; border-radius: 12px; border: 1px solid #222; color: #fff;">
-      <h2 style="color: var(--accent-cyan); margin-bottom: 20px;"><i class="fa-solid fa-box-open"></i> Minhas Compras & Pedidos</h2>
-      
+    <!-- Minhas compras -->
+    <section class="minhas-compras-section">
+      <h2>
+        <i class="fa-solid fa-box-open"></i>
+        Minhas Compras e Pedidos
+      </h2>
+
       <div id="historico-pedidos">
-        <p id="sem-pedidos" style="color: #888; text-align: center; padding: 20px;">Ainda não realizaste nenhuma compra na Neves Store.</p>
+        <p id="sem-pedidos">
+          Você ainda não realizou nenhuma compra na Fair Price Importados.
+        </p>
       </div>
     </section>
+
   </main>
 
   <script src="{% static 'js/perfil.js' %}"></script>

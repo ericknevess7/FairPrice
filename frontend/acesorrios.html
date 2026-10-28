@@ -1,36 +1,40 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Acessórios — Neves Store</title>
+  <title>Acessórios — Fair Price Importados</title>
   <link rel="stylesheet" href="{% static 'css/nevesStore.css' %}" />
   <link rel="stylesheet" href="{% static 'css/acesorrios.css' %}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Header -->
   <header class="header">
     <div class="header-container">
       <div class="logo">
-        <a href="index.html"><img src="{% static 'imgs tenis/logoneves store.jpg' %}" alt="Neves Store"></a>
+        <a href="index.html">
+          <img src="{% static 'imgs tenis/logoneves store.jpg' %}" alt="Fair Price Importados">
+        </a>
       </div>
 
       <div class="search-bar">
         <form id="searchForm">
-          <input type="text" id="searchInput" placeholder="Buscar tênis, marcas..." />
-          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input type="text" id="searchInput" placeholder="Buscar produtos, marcas..." />
+          <button type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
       </div>
 
       <div class="header-icons">
-        <button id="theme-toggle" class="theme-toggle-btn" title="Alternar Modo Claro/Escuro">
+        <button id="theme-toggle" class="theme-toggle-btn" title="Alternar modo claro/escuro" aria-label="Alternar tema">
           <i class="fa-solid fa-moon" id="theme-icon"></i>
         </button>
-        <a href="perfil.html" id="user-profile-link" title="Minha Conta"><i class="fa-solid fa-user"></i></a>
-        <a href="carrinho.html" id="cart-button">
+        <a href="perfil.html" id="user-profile-link" title="Minha Conta" aria-label="Minha Conta">
+          <i class="fa-solid fa-user"></i>
+        </a>
+        <a href="carrinho.html" id="cart-button" aria-label="Carrinho">
           <i class="fa-solid fa-bag-shopping"></i>
           <span id="cart-count">0</span>
         </a>
@@ -38,7 +42,6 @@
     </div>
   </header>
 
-  <!-- Navegação Categorias -->
   <nav class="navbar-categorias">
     <ul class="navbar-nav">
       <li><a href="tenis.html" class="nav-link">Tênis</a></li>
@@ -48,57 +51,59 @@
     </ul>
   </nav>
 
- <section class="products-section">
-    <div class="section-title">
-      <h2>Acessórios</h2>
-      <p>Fechando os últimos detalhes. O estoque chega em breve.</p>
-    </div>
-
-    <div class="locked-grid">
-      <div class="locked-card">
-        <div class="locked-content">
-          <span class="lock-icon">🔒</span>
-          <h3>Bonés & Toucas</h3>
-          <p>Aguarde o drop.</p>
-        </div>
+  <main>
+    <section class="products-section">
+      <div class="section-title">
+        <h2>Acessórios</h2>
+        <p>Os detalhes que completam seu estilo. Novidades chegando em breve.</p>
       </div>
 
-      <div class="locked-card">
-        <div class="locked-content">
-          <span class="lock-icon">🔒</span>
-          <h3>Shoulder Bags</h3>
-          <p>Em breve...</p>
+      <div class="locked-grid">
+        <div class="locked-card">
+          <div class="locked-content">
+            <span class="lock-icon">🔒</span>
+            <h3>Bonés & Toucas</h3>
+            <p>Aguarde o próximo drop.</p>
+          </div>
+        </div>
+
+        <div class="locked-card">
+          <div class="locked-content">
+            <span class="lock-icon">🔒</span>
+            <h3>Shoulder Bags</h3>
+            <p>Em breve na Fair Price.</p>
+          </div>
+        </div>
+
+        <div class="locked-card">
+          <div class="locked-content">
+            <span class="lock-icon">🔒</span>
+            <h3>Meias Exclusivas</h3>
+            <p>Novidades chegando.</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="locked-card">
-        <div class="locked-content">
-          <span class="lock-icon">🔒</span>
-          <h3>Meias Exclusivas</h3>
-          <p>Loading...</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mensagem de Redirecionamento -->
-    <div style="text-align: center; margin-top: 50px; padding: 20px;">
-      <p style="color: #b3b3b3; font-size: 18px; line-height: 1.5; margin-bottom: 20px;">
-        Estamos trazendo as melhores peças de streetwear para você. Aguarde o drop em 2027... <br>
-        <span style="color: #fff; font-weight: bold;">Por enquanto, aproveite nossas promoções exclusivas de tênis!</span>
+    <section style="text-align:center; margin-top:50px; padding:20px;">
+      <p style="color:#b3b3b3; font-size:18px; line-height:1.6; margin-bottom:20px;">
+        Estamos preparando acessórios para completar seu visual.
+        <br>
+        <strong style="color:#d4af37;">Enquanto isso, aproveite nossas ofertas de tênis!</strong>
       </p>
-      <a href="tenis.html" class="btn-buy" style="display: inline-block; padding: 15px 40px; text-decoration: none; font-size: 16px; border-radius: 8px;">
-        🔥 Ver Promoções de Tênis
+      <a href="tenis.html" class="btn-buy" style="display:inline-block; padding:15px 40px; text-decoration:none; font-size:16px; border-radius:8px;">
+        <i class="fa-solid fa-fire"></i> Ver Ofertas de Tênis
       </a>
-    </div>
+    </section>
+  </main>
 
-  <!-- Rodapé -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-col">
-        <h4>NEVES STORE</h4>
-        <p>A sua loja referência em sneakers e moda streetwear.</p>
+        <h4>FAIR PRICE IMPORTADOS</h4>
+        <p>Sua loja de sneakers e moda streetwear com estilo e preço justo.</p>
       </div>
+
       <div class="footer-col">
         <h4>Categorias</h4>
         <ul>
@@ -108,14 +113,16 @@
           <li><a href="acesorrios.html">Acessórios</a></li>
         </ul>
       </div>
+
       <div class="footer-col">
         <h4>Atendimento</h4>
         <p>E-mail: nevesstoreoficial01@gmail.com</p>
         <p>WhatsApp: (19) 99972-8998</p>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <p>&copy; 2026 NEVES STORE — Todos os direitos reservados.</p>
+      <p>&copy; 2026 FAIR PRICE IMPORTADOS — Todos os direitos reservados.</p>
     </div>
   </footer>
 
